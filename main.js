@@ -11,9 +11,10 @@ let ball = {
     const centerX= (this.x + this.img.width) / 2
     const centerY= (this.y + this.img.height) / 2
     this.rotation+=0.01;
-    context.rotate(this.rotation*Math.PI/180)
     context.translate(centerX, centerY);
+    context.rotate(this.rotation*Math.PI/180)
     context.scale(this.scale, this.scale)
+    context.rotate(this.rotation)
     context.translate(-centerX, -centerY);
     context.drawImage(this.img, this.x, this.y);
     },
